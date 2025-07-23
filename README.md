@@ -270,7 +270,7 @@ def dijkstra(maze, start, goal):
 
 #### 3. A* Algorithm
 
-![A* Algorithm Result](A_star.PNG)
+![A* Algorithm Result](A_STAR.PNG)
 
 *A* algorithm result showing efficient pathfinding with heuristic guidance. The algorithm explores significantly fewer nodes compared to Dijkstra while maintaining optimality.*
 
