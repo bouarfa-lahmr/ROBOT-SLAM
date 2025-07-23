@@ -26,6 +26,11 @@ This project implements a complete autonomous navigation system based on ROS 2, 
 ## 🏗️ System Architecture
 
 ### Hardware Platform
+
+![TurtleBot3 in Gazebo](TurtleBot3.PNG)
+
+*TurtleBot3 Waffle model in Gazebo simulation environment, equipped with 360° LiDAR sensor for SLAM and navigation.*
+
 - **Robot**: TurtleBot3 Waffle
 - **Sensors**: 360° LiDAR, IMU, Wheel Encoders
 - **Simulation**: Gazebo 3D environment
@@ -38,6 +43,20 @@ This project implements a complete autonomous navigation system based on ROS 2, 
 - **Navigation**: Nav2 stack
 - **Localization**: AMCL (Adaptive Monte Carlo Localization)
 - **Programming**: Python, C++
+
+## 🌐 Simulation Environment
+
+### 3D Maze Environment
+
+![Labyrinth in Gazebo](labyrinthe.PNG)
+
+*Complex 3D labyrinth environment in Gazebo with multiple corridors, dead ends, and narrow passages designed to test autonomous navigation capabilities.*
+
+The maze specifications:
+- **Dimensions**: 20m × 20m
+- **Wall Height**: 2.5m
+- **Wall Thickness**: 0.15m
+- **Complexity**: Multiple dead ends, narrow corridors, and bifurcations
 
 ## 🚀 Installation & Setup
 
@@ -96,6 +115,12 @@ sudo apt install ros-humble-slam-toolbox
    ros2 run nav2_map_server map_saver_cli -f ~/maps/maze_map
    ```
 
+### SLAM Results
+
+![SLAM Mapping](SLAM.PNG)
+
+*Real-time SLAM mapping process showing the progressive construction of the maze map as the robot explores the environment. The white areas represent free space, black areas are obstacles (walls), and gray areas are unexplored regions.*
+
 ### SLAM Configuration
 
 The SLAM system uses the following key parameters:
@@ -126,6 +151,10 @@ slam_toolbox:
 ## 🧭 Navigation System
 
 ### AMCL Localization
+
+![AMCL Localization](AMCL.PNG)
+
+*AMCL (Adaptive Monte Carlo Localization) in action, showing the particle cloud (red arrows) representing the robot's estimated position and orientation within the mapped environment. The particles converge around the robot's true position.*
 
 The Adaptive Monte Carlo Localization provides robust pose estimation:
 
@@ -164,6 +193,10 @@ The navigation stack includes:
 
 ### Test Environment
 
+![2D Maze for Algorithm Testing](MAZE-2D.PNG)
+
+*2D maze representation used for comparative analysis of path planning algorithms. The maze features complex pathways, dead ends, and multiple route options to thoroughly test algorithm performance.*
+
 The comparative analysis uses a 2D maze environment with the following specifications:
 
 - **Dimensions**: 20m × 20m
@@ -174,6 +207,11 @@ The comparative analysis uses a 2D maze environment with the following specifica
 ### Algorithm Implementations
 
 #### 1. Breadth-First Search (BFS)
+
+![BFS Algorithm Result](BFS.PNG)
+
+*BFS path planning result showing the explored nodes and the found path. BFS explores nodes level by level, guaranteeing the shortest path in unweighted graphs.*
+
 ```python
 def bfs(maze, start, goal):
     queue = deque([start])
@@ -196,6 +234,11 @@ def bfs(maze, start, goal):
 ```
 
 #### 2. Dijkstra's Algorithm
+
+![Dijkstra Algorithm Result](DIJIKSTRA.PNG)
+
+*Dijkstra's algorithm result demonstrating exhaustive exploration to find the optimal path. The algorithm explores nodes in order of their distance from the start, guaranteeing the shortest path.*
+
 ```python
 def dijkstra(maze, start, goal):
     distances = {start: 0}
@@ -226,6 +269,11 @@ def dijkstra(maze, start, goal):
 ```
 
 #### 3. A* Algorithm
+
+![A* Algorithm Result](A_star.PNG)
+
+*A* algorithm result showing efficient pathfinding with heuristic guidance. The algorithm explores significantly fewer nodes compared to Dijkstra while maintaining optimality.*
+
 ```python
 def astar(maze, start, goal):
     open_set = [(0, start)]
@@ -252,6 +300,11 @@ def astar(maze, start, goal):
 ```
 
 #### 4. Theta* Algorithm
+
+![Theta* Algorithm Result](Theta_star.PNG)
+
+*Theta* algorithm result showcasing any-angle pathfinding capabilities. The algorithm creates smooth, direct paths by allowing line-of-sight movements, resulting in significantly shorter path lengths.*
+
 ```python
 def theta_star(maze, start, goal):
     open_set = [(0, start)]
@@ -495,10 +548,10 @@ Contributions are welcome! Please follow these guidelines:
 **Institution:** Euro-Mediterranean University of Fez (EuroMed)  
 **Department:** Robotics and Cobotics - EIDIA
 
-
 ## 📞 Support & Contact
 
 For all information, questions, help, or collaboration opportunities, feel free to contact the team.
+
 ### Additional Support
 - Open an issue on GitHub for technical problems
 - Check the documentation in `/docs` for detailed guides
@@ -516,14 +569,10 @@ We're always happy to discuss this project, answer questions about SLAM implemen
 - Academic supervisors for guidance and expertise
 - Robotics research community for algorithmic foundations
 
-
+---
 
 ⭐ **If you found this project helpful, please give it a star!** ⭐
 
 ## 🏷️ Tags
 
 `slam` `ros2` `navigation` `path-planning` `autonomous-robot` `turtlebot3` `amcl` `nav2` `dijkstra` `astar` `bfs` `theta-star` `robotics` `gazebo` `rviz`
-```
-```
-
-
