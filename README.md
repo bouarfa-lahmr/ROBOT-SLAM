@@ -235,7 +235,7 @@ def bfs(maze, start, goal):
 
 #### 2. Dijkstra's Algorithm
 
-![Dijkstra Algorithm Result](DIJIKSTRA.PNG)
+![Dijkstra Algorithm Result](dIJIKSTRA.PNG)
 
 *Dijkstra's algorithm result demonstrating exhaustive exploration to find the optimal path. The algorithm explores nodes in order of their distance from the start, guaranteeing the shortest path.*
 
