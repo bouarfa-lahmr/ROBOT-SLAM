@@ -77,50 +77,6 @@ sudo apt install ros-humble-slam-toolbox
    echo 'export TURTLEBOT3_MODEL=waffle' >> ~/.bashrc
    ```
 
-## 📁 Project Structure
-
-```
-slam-navigation-labyrinth/
-│
-├── src/
-│   ├── slam_navigation/
-│   │   ├── launch/
-│   │   │   ├── slam_launch.py
-│   │   │   ├── navigation_launch.py
-│   │   │   └── full_system_launch.py
-│   │   ├── config/
-│   │   │   ├── nav2_params.yaml
-│   │   │   └── slam_params.yaml
-│   │   └── maps/
-│   │       ├── maze_map.pgm
-│   │       └── maze_map.yaml
-│   │
-│   └── path_planning_analysis/
-│       ├── algorithms/
-│       │   ├── dijkstra.py
-│       │   ├── astar.py
-│       │   ├── bfs.py
-│       │   └── theta_star.py
-│       ├── maze_generator.py
-│       ├── performance_analyzer.py
-│       └── visualization.py
-│
-├── worlds/
-│   └── maze_world.world
-│
-├── docs/
-│   ├── algorithm_comparison.md
-│   ├── slam_implementation.md
-│   └── navigation_setup.md
-│
-├── results/
-│   ├── performance_metrics.csv
-│   ├── algorithm_comparison_charts.png
-│   └── navigation_videos/
-│
-└── README.md
-```
-
 ## 🗺️ SLAM Implementation
 
 ### Map Generation Process
